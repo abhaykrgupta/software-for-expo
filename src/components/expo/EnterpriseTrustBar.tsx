@@ -35,8 +35,8 @@ export default function EnterpriseTrustBar() {
     >
       {/* Label */}
       <div className="text-center mb-4">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] font-mono"
-          style={{ color: 'rgba(22,163,74,0.65)' }}>
+        <span className="text-xl font-bold uppercase tracking-[0.18em]"
+          style={{ color: '#15803D' }}>
           Trusted by Enterprise Leaders
         </span>
       </div>
@@ -67,8 +67,8 @@ export default function EnterpriseTrustBar() {
             >
               <span className="text-xl">{ent.icon}</span>
               <div>
-                <p className="text-sm font-bold text-slate-700 whitespace-nowrap">{ent.name}</p>
-                <p className="text-[10px] text-slate-400 font-mono whitespace-nowrap">{ent.sector}</p>
+                <p className="text-xl font-bold text-slate-700 whitespace-nowrap">{ent.name}</p>
+                <p className="text-base font-medium whitespace-nowrap" style={{ color: '#4B5563' }}>{ent.sector}</p>
               </div>
             </div>
           ))}

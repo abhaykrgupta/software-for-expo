@@ -92,23 +92,23 @@ export default function FranchiseCTA() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 w-full">
+    <div className="flex flex-col lg:flex-row gap-6 w-full h-full min-h-0">
 
       {/* ── Left: Calculator ── */}
-      <div className="flex-1 space-y-5">
+      <div className="flex-1 space-y-5 overflow-y-auto pr-1" style={{ scrollbarWidth: 'none' }}>
         {/* Tier selector */}
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">City Type</p>
+          <p className="text-xl font-bold uppercase tracking-widest mb-3" style={{ color: '#1F2937' }}>City Type</p>
           <div className="flex gap-2">
             {(Object.keys(TIERS) as TierKey[]).map(k => (
               <button
                 key={k}
                 onClick={() => setTier(k)}
-                className="flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all duration-200"
+                className="flex-1 py-2 px-3 rounded-xl text-base font-bold transition-all duration-200"
                 style={{
                   background: tier === k ? `${TIERS[k].color}12` : '#FFFFFF',
                   border:     `1.5px solid ${tier === k ? TIERS[k].color + '60' : 'rgba(203,213,225,0.8)'}`,
-                  color:      tier === k ? TIERS[k].color : '#64748B',
+                  color:      tier === k ? TIERS[k].color : '#374151',
                   boxShadow:  tier === k ? `0 2px 10px ${TIERS[k].color}18` : '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
@@ -116,14 +116,14 @@ export default function FranchiseCTA() {
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-slate-600 font-mono mt-1.5">{t.examples}</p>
+          <p className="text-lg font-medium mt-2" style={{ color: '#374151' }}>{t.examples}</p>
         </div>
 
         {/* Daily orders slider */}
         <div>
           <div className="flex justify-between mb-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">Daily Orders</p>
-            <span className="text-sm font-black num" style={{ color: t.color }}>{dailyOrders} orders/day</span>
+            <p className="text-xl font-bold uppercase tracking-widest" style={{ color: '#1F2937' }}>Daily Orders</p>
+            <span className="text-2xl font-black num" style={{ color: t.color }}>{dailyOrders} orders/day</span>
           </div>
           <input
             type="range"
@@ -133,7 +133,7 @@ export default function FranchiseCTA() {
             className="w-full"
             style={{ accentColor: t.color }}
           />
-          <div className="flex justify-between text-[10px] text-slate-700 font-mono mt-1">
+          <div className="flex justify-between text-lg font-semibold mt-1" style={{ color: '#374151' }}>
             <span>8/day</span><span>60/day</span>
           </div>
         </div>
@@ -156,11 +156,11 @@ export default function FranchiseCTA() {
                 boxShadow: '0 1px 6px rgba(0,0,0,0.04)',
               }}
             >
-              <div className="flex items-center gap-1.5 mb-1">
-                <Icon className="w-3 h-3" style={{ color }} />
-                <span className="text-[10px] uppercase tracking-wider font-mono text-slate-400">{label}</span>
+              <div className="flex items-center gap-1.5 mb-2">
+                <Icon className="w-4 h-4" style={{ color }} />
+                <span className="text-lg font-semibold uppercase tracking-wider" style={{ color: '#374151' }}>{label}</span>
               </div>
-              <p className="text-xl font-black num" style={{ color }}>
+              <p className="text-4xl font-black num" style={{ color }}>
                 {value}
               </p>
             </motion.div>
@@ -168,17 +168,18 @@ export default function FranchiseCTA() {
         </div>
 
         {/* Investment note */}
-        <div className="rounded-xl px-3 py-2.5 text-xs"
+        <div className="rounded-xl px-3 py-2.5 text-base font-medium"
           style={{ background: 'rgba(240,253,244,0.8)', border: '1px solid rgba(22,163,74,0.15)' }}>
-          <span className="text-slate-400 font-mono">Total investment: </span>
+          <span style={{ color: '#374151' }}>Total investment: </span>
           <span className="font-black" style={{ color: t.color }}>{fmt(t.investment)}</span>
-          <span className="text-slate-600 font-mono"> · Avg order value: ₹{t.avgOrderValue}</span>
+          <span style={{ color: '#374151' }}> · Avg order value: ₹{t.avgOrderValue}</span>
         </div>
       </div>
 
       {/* ── Right: Lead form ── */}
       <div
-        className="lg:w-72 rounded-2xl p-5 flex flex-col"
+        className="lg:w-72 rounded-2xl p-5 flex flex-col overflow-y-auto"
+        style={{ scrollbarWidth: 'none' }}
         style={{
           background: '#FFFFFF',
           border: '1px solid rgba(22,163,74,0.18)',
@@ -205,12 +206,12 @@ export default function FranchiseCTA() {
                 <CheckCircle2 className="w-14 h-14" style={{ color: '#10B981' }} />
               </motion.div>
               <div>
-                <p className="text-lg font-black text-slate-800 leading-tight">You&apos;re on your way!</p>
-                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                <p className="text-2xl font-black text-slate-800 leading-tight">You&apos;re on your way!</p>
+                <p className="text-base font-medium mt-1.5 leading-relaxed" style={{ color: '#374151' }}>
                   Our franchise expert will call you within 24 hours to walk you through your <span className="font-semibold text-green-600">30-day launch plan</span>.
                 </p>
               </div>
-              <div className="text-xs font-mono px-3 py-2 rounded-lg"
+              <div className="text-base font-semibold px-3 py-2 rounded-lg"
                 style={{ background: 'rgba(16,185,129,0.08)', color: '#10B981', border: '1px solid rgba(16,185,129,0.2)' }}>
                 {city} · {TIERS[tier].label} · {roi.monthlyOrders} orders/mo
               </div>
@@ -225,7 +226,7 @@ export default function FranchiseCTA() {
               className="flex-1 flex flex-col gap-4"
             >
               <div>
-                <p className="font-black text-slate-800 leading-tight" style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)' }}>
+                <p className="font-black text-slate-800 leading-tight" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)' }}>
                   Your{' '}
                   <span style={{
                     background: 'linear-gradient(135deg, #15803D, #22C55E)',
@@ -237,14 +238,14 @@ export default function FranchiseCTA() {
                   </span>{' '}
                   Awaits
                 </p>
-                <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                <p className="text-base font-medium mt-1.5 leading-relaxed" style={{ color: '#374151' }}>
                   No franchise fee call needed. Just enter your city and number.
                 </p>
               </div>
 
               <div className="space-y-3 flex-1">
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono block mb-1.5">
+                  <label className="text-base font-bold uppercase tracking-wider block mb-1.5" style={{ color: '#1F2937' }}>
                     Your City
                   </label>
                   <input
@@ -253,11 +254,11 @@ export default function FranchiseCTA() {
                     onChange={e => setCity(e.target.value)}
                     placeholder="e.g. Jaipur, Pune..."
                     required
-                    className="input-brand text-sm"
+                    className="input-brand text-base"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono block mb-1.5">
+                  <label className="text-base font-bold uppercase tracking-wider block mb-1.5" style={{ color: '#1F2937' }}>
                     WhatsApp / Phone
                   </label>
                   <input
@@ -266,7 +267,7 @@ export default function FranchiseCTA() {
                     onChange={e => setPhone(e.target.value)}
                     placeholder="+91 98765 43210"
                     required
-                    className="input-brand text-sm"
+                    className="input-brand text-base"
                   />
                 </div>
               </div>
@@ -274,21 +275,21 @@ export default function FranchiseCTA() {
               {/* Projected metric teaser */}
               <div className="rounded-xl p-3 text-center"
                 style={{ background: `${t.color}0A`, border: `1px solid ${t.color}28` }}>
-                <p className="text-[10px] text-slate-500 font-mono mb-0.5">Your projected profit</p>
-                <p className="text-2xl font-black num" style={{ color: t.color }}>
+                <p className="text-lg font-semibold mb-0.5" style={{ color: '#374151' }}>Your projected profit</p>
+                <p className="text-4xl font-black num" style={{ color: t.color }}>
                   {fmt(roi.monthlyProfit)}/mo
                 </p>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl font-black text-sm flex flex-col items-center justify-center gap-0.5 btn-glow"
+                className="w-full py-3.5 rounded-xl font-black text-lg flex flex-col items-center justify-center gap-0.5 btn-glow"
               >
                 <span className="flex items-center gap-2">
                   Start Your Laundry Business
                   <ArrowRight className="w-4 h-4" />
                 </span>
-                <span className="text-[10px] font-medium opacity-75 tracking-wider">Be operational in 30 days</span>
+                <span className="text-sm font-medium opacity-90 tracking-wider">Be operational in 30 days</span>
               </button>
 
               {/* Trust badges */}
