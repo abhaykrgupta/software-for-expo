@@ -33,19 +33,19 @@ export default function NavBar() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 h-[60px]"
         style={{
-          background: 'rgba(8, 13, 28, 0.88)',
+          background: 'rgba(8, 13, 28, 0.90)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
-          borderBottom: '1px solid rgba(6,182,212,0.12)',
-          boxShadow: '0 1px 0 rgba(6,182,212,0.18), 0 4px 24px rgba(0,0,0,0.4)',
+          borderBottom: '1px solid rgba(22,163,74,0.12)',
+          boxShadow: '0 1px 0 rgba(22,163,74,0.16), 0 4px 24px rgba(0,0,0,0.38)',
         }}
       >
         {/* Neon top edge */}
         <div
           className="absolute top-0 left-0 right-0 h-px pointer-events-none"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(6,182,212,0.6) 25%, rgba(0,255,234,0.4) 50%, rgba(6,182,212,0.6) 75%, transparent 100%)',
-            boxShadow: '0 0 8px rgba(6,182,212,0.4)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(22,163,74,0.55) 25%, rgba(34,197,94,0.40) 50%, rgba(22,163,74,0.55) 75%, transparent 100%)',
+            boxShadow: '0 0 6px rgba(22,163,74,0.30)',
           }}
         />
 
@@ -53,7 +53,7 @@ export default function NavBar() {
         <motion.div
           className="absolute top-0 bottom-0 w-[2px] pointer-events-none"
           style={{
-            background: 'linear-gradient(180deg, transparent, rgba(6,182,212,0.25), transparent)',
+            background: 'linear-gradient(180deg, transparent, rgba(22,163,74,0.20), transparent)',
             filter: 'blur(1px)',
           }}
           animate={{ left: ['-2%', '102%'] }}
@@ -80,7 +80,7 @@ export default function NavBar() {
                   href={href}
                   className={[
                     'relative flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200',
-                    active ? 'text-cyan-400' : 'text-slate-500 hover:text-slate-200',
+                    active ? 'text-green-500' : 'text-slate-500 hover:text-slate-200',
                   ].join(' ')}
                 >
                   {active && (
@@ -88,9 +88,9 @@ export default function NavBar() {
                       layoutId="nav-active"
                       className="absolute inset-0 rounded-lg"
                       style={{
-                        background: 'rgba(6,182,212,0.07)',
-                        border: '1px solid rgba(6,182,212,0.22)',
-                        boxShadow: '0 0 12px rgba(6,182,212,0.1)',
+                        background: 'rgba(22,163,74,0.07)',
+                        border: '1px solid rgba(22,163,74,0.22)',
+                        boxShadow: '0 0 10px rgba(22,163,74,0.08)',
                       }}
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
@@ -114,8 +114,8 @@ export default function NavBar() {
               background: 'rgba(30,41,59,0.3)',
             }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLButtonElement).style.color = '#22D3EE';
-              (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(6,182,212,0.3)';
+              (e.currentTarget as HTMLButtonElement).style.color = '#22C55E';
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(22,163,74,0.30)';
             }}
             onMouseLeave={e => {
               (e.currentTarget as HTMLButtonElement).style.color = '#64748B';
@@ -132,19 +132,19 @@ export default function NavBar() {
             style={isOffline
               ? { background: 'rgba(245,158,11,0.08)', color: '#F59E0B', borderColor: 'rgba(245,158,11,0.25)' }
               : {
-                  background: 'rgba(0,255,136,0.06)',
-                  color: '#00FF88',
-                  borderColor: 'rgba(0,255,136,0.25)',
-                  boxShadow: '0 0 12px rgba(0,255,136,0.1)',
+                  background: 'rgba(22,163,74,0.08)',
+                  color: '#22C55E',
+                  borderColor: 'rgba(22,163,74,0.28)',
+                  boxShadow: '0 0 10px rgba(22,163,74,0.08)',
                 }
             }
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
               style={{
-                background: isOffline ? '#F59E0B' : '#00FF88',
-                boxShadow: isOffline ? 'none' : '0 0 6px #00FF88',
-                animation: isOffline ? 'none' : 'livePulseCyan 2s infinite',
+                background: isOffline ? '#F59E0B' : '#22C55E',
+                boxShadow: isOffline ? 'none' : '0 0 5px rgba(34,197,94,0.7)',
+                animation: isOffline ? 'none' : 'livePulseGreen 2s infinite',
               }}
             />
             <span className="hidden sm:block uppercase tracking-wider" style={{ fontSize: '0.65rem' }}>

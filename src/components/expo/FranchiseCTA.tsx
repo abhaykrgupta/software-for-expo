@@ -12,7 +12,7 @@ const TIERS = {
     investment: 1_500_000,
     avgOrderValue: 380,
     monthlyOpEx: 42_000,
-    color: '#22D3EE',
+    color: '#22C55E',
   },
   tier2: {
     label: 'Tier-2 City',
@@ -98,7 +98,7 @@ export default function FranchiseCTA() {
       <div className="flex-1 space-y-5">
         {/* Tier selector */}
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 font-mono mb-2">City Type</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">City Type</p>
           <div className="flex gap-2">
             {(Object.keys(TIERS) as TierKey[]).map(k => (
               <button
@@ -106,10 +106,10 @@ export default function FranchiseCTA() {
                 onClick={() => setTier(k)}
                 className="flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all duration-200"
                 style={{
-                  background: tier === k ? `${TIERS[k].color}18` : 'rgba(20,30,55,0.5)',
-                  border:     `1px solid ${tier === k ? TIERS[k].color + '50' : 'rgba(71,85,105,0.3)'}`,
+                  background: tier === k ? `${TIERS[k].color}12` : '#FFFFFF',
+                  border:     `1.5px solid ${tier === k ? TIERS[k].color + '60' : 'rgba(203,213,225,0.8)'}`,
                   color:      tier === k ? TIERS[k].color : '#64748B',
-                  boxShadow:  tier === k ? `0 0 16px ${TIERS[k].color}20` : 'none',
+                  boxShadow:  tier === k ? `0 2px 10px ${TIERS[k].color}18` : '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
                 {TIERS[k].label}
@@ -122,7 +122,7 @@ export default function FranchiseCTA() {
         {/* Daily orders slider */}
         <div>
           <div className="flex justify-between mb-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-500 font-mono">Daily Orders</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-mono">Daily Orders</p>
             <span className="text-sm font-black num" style={{ color: t.color }}>{dailyOrders} orders/day</span>
           </div>
           <input
@@ -150,17 +150,17 @@ export default function FranchiseCTA() {
               key={label}
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 0.3 }}
-              className="rounded-xl p-3"
+              className="rounded-xl p-3 bg-white"
               style={{
-                background: `${color}08`,
-                border: `1px solid ${color}25`,
+                border: `1px solid ${color}28`,
+                boxShadow: '0 1px 6px rgba(0,0,0,0.04)',
               }}
             >
               <div className="flex items-center gap-1.5 mb-1">
                 <Icon className="w-3 h-3" style={{ color }} />
-                <span className="text-[10px] uppercase tracking-wider font-mono text-slate-500">{label}</span>
+                <span className="text-[10px] uppercase tracking-wider font-mono text-slate-400">{label}</span>
               </div>
-              <p className="text-xl font-black num" style={{ color, textShadow: `0 0 16px ${color}50` }}>
+              <p className="text-xl font-black num" style={{ color }}>
                 {value}
               </p>
             </motion.div>
@@ -169,8 +169,8 @@ export default function FranchiseCTA() {
 
         {/* Investment note */}
         <div className="rounded-xl px-3 py-2.5 text-xs"
-          style={{ background: 'rgba(20,30,55,0.5)', border: '1px solid rgba(6,182,212,0.1)' }}>
-          <span className="text-slate-500 font-mono">Total investment: </span>
+          style={{ background: 'rgba(240,253,244,0.8)', border: '1px solid rgba(22,163,74,0.15)' }}>
+          <span className="text-slate-400 font-mono">Total investment: </span>
           <span className="font-black" style={{ color: t.color }}>{fmt(t.investment)}</span>
           <span className="text-slate-600 font-mono"> · Avg order value: ₹{t.avgOrderValue}</span>
         </div>
@@ -180,13 +180,13 @@ export default function FranchiseCTA() {
       <div
         className="lg:w-72 rounded-2xl p-5 flex flex-col"
         style={{
-          background: 'rgba(8,13,28,0.85)',
-          border: '1px solid rgba(6,182,212,0.15)',
-          boxShadow: '0 0 40px rgba(6,182,212,0.06)',
+          background: '#FFFFFF',
+          border: '1px solid rgba(22,163,74,0.18)',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
         }}
       >
         {/* Top shimmer */}
-        <div className="h-px mb-5" style={{ background: 'linear-gradient(90deg, transparent, rgba(6,182,212,0.5), transparent)' }} />
+        <div className="h-px mb-5" style={{ background: 'linear-gradient(90deg, transparent, rgba(22,163,74,0.45), transparent)' }} />
 
         <AnimatePresence mode="wait">
           {submitted ? (
@@ -205,9 +205,9 @@ export default function FranchiseCTA() {
                 <CheckCircle2 className="w-14 h-14" style={{ color: '#10B981' }} />
               </motion.div>
               <div>
-                <p className="text-lg font-black" style={{ color: '#10B981' }}>Request Received!</p>
-                <p className="text-xs text-slate-500 mt-1.5 font-mono leading-relaxed">
-                  Our franchise expert will call you within 24 hours.
+                <p className="text-lg font-black text-slate-800 leading-tight">You&apos;re on your way!</p>
+                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                  Our franchise expert will call you within 24 hours to walk you through your <span className="font-semibold text-green-600">30-day launch plan</span>.
                 </p>
               </div>
               <div className="text-xs font-mono px-3 py-2 rounded-lg"
@@ -225,19 +225,20 @@ export default function FranchiseCTA() {
               className="flex-1 flex flex-col gap-4"
             >
               <div>
-                <p className="text-base font-black text-slate-100 leading-tight">
-                  Start Your Own
+                <p className="font-black text-slate-800 leading-tight" style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)' }}>
+                  Your{' '}
+                  <span style={{
+                    background: 'linear-gradient(135deg, #15803D, #22C55E)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}>
+                    UClean Store
+                  </span>{' '}
+                  Awaits
                 </p>
-                <p className="text-base font-black leading-tight" style={{
-                  background: 'linear-gradient(135deg, #22D3EE, #818CF8)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  UClean Store
-                </p>
-                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
-                  No franchise fee call needed. Just 2 fields.
+                <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                  No franchise fee call needed. Just enter your city and number.
                 </p>
               </div>
 
@@ -252,7 +253,7 @@ export default function FranchiseCTA() {
                     onChange={e => setCity(e.target.value)}
                     placeholder="e.g. Jaipur, Pune..."
                     required
-                    className="input-premium text-sm"
+                    className="input-brand text-sm"
                   />
                 </div>
                 <div>
@@ -265,14 +266,14 @@ export default function FranchiseCTA() {
                     onChange={e => setPhone(e.target.value)}
                     placeholder="+91 98765 43210"
                     required
-                    className="input-premium text-sm"
+                    className="input-brand text-sm"
                   />
                 </div>
               </div>
 
               {/* Projected metric teaser */}
               <div className="rounded-xl p-3 text-center"
-                style={{ background: `${t.color}08`, border: `1px solid ${t.color}20` }}>
+                style={{ background: `${t.color}0A`, border: `1px solid ${t.color}28` }}>
                 <p className="text-[10px] text-slate-500 font-mono mb-0.5">Your projected profit</p>
                 <p className="text-2xl font-black num" style={{ color: t.color }}>
                   {fmt(roi.monthlyProfit)}/mo
@@ -281,15 +282,29 @@ export default function FranchiseCTA() {
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl font-black text-sm flex items-center justify-center gap-2 btn-glow"
+                className="w-full py-3.5 rounded-xl font-black text-sm flex flex-col items-center justify-center gap-0.5 btn-glow"
               >
-                Get Franchise Details
-                <ArrowRight className="w-4 h-4" />
+                <span className="flex items-center gap-2">
+                  Start Your Laundry Business
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+                <span className="text-[10px] font-medium opacity-75 tracking-wider">Be operational in 30 days</span>
               </button>
 
-              <p className="text-[10px] text-slate-700 text-center font-mono">
-                No spam. Our team calls once, personally.
-              </p>
+              {/* Trust badges */}
+              <div className="flex items-center justify-center gap-3 flex-wrap pt-1">
+                {[
+                  { icon: '⭐', text: '4.7 Rated' },
+                  { icon: '🔒', text: 'ISO Certified' },
+                  { icon: '✅', text: '94% Renewal' },
+                  { icon: '₹0', text: 'Hidden Fees' },
+                ].map(({ icon, text }) => (
+                  <span key={text} className="trust-badge">
+                    <span>{icon}</span>
+                    <span>{text}</span>
+                  </span>
+                ))}
+              </div>
             </motion.form>
           )}
         </AnimatePresence>

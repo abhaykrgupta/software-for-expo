@@ -38,7 +38,7 @@ const PARTICLE_DATA = Array.from({ length: 18 }, (_, i) => ({
   w: (i % 3) + 2,
   left: `${(i * 37 + 11) % 100}%`,
   top:  `${(i * 53 + 7)  % 100}%`,
-  color: i % 4 === 0 ? '#06B6D4' : i % 4 === 1 ? '#818CF8' : i % 4 === 2 ? '#10B981' : '#00FFEA',
+  color: i % 4 === 0 ? '#16A34A' : i % 4 === 1 ? '#818CF8' : i % 4 === 2 ? '#10B981' : '#00D664',
   opacity: 0.08 + (i % 5) * 0.04,
   dur: 7 + (i % 5),
   delay: (i * 0.7) % 5,
@@ -135,15 +135,15 @@ export default function DashboardPage() {
             />
             <motion.div
               className="absolute inset-2 rounded-full"
-              style={{ border: '2px solid rgba(6,182,212,0.4)', borderTopColor: '#22D3EE' }}
+              style={{ border: '2px solid rgba(6,182,212,0.4)', borderTopColor: '#22C55E' }}
               animate={{ rotate: 360 }}
               transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full" style={{ background: '#22D3EE', boxShadow: '0 0 12px #22D3EE' }} />
+              <div className="w-2 h-2 rounded-full" style={{ background: '#22C55E', boxShadow: '0 0 12px #22C55E' }} />
             </div>
           </div>
-          <p className="text-sm font-semibold font-mono" style={{ color: '#22D3EE' }}>
+          <p className="text-sm font-semibold font-mono" style={{ color: '#22C55E' }}>
             INITIALIZING COMMAND CENTER...
           </p>
           <p className="text-xs text-slate-600 mt-1 font-mono">connecting to live network</p>

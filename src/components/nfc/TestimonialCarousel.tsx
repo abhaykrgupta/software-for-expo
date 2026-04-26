@@ -8,14 +8,14 @@ import { loadTestimonials } from '@/lib/dataLoader';
 import type { Testimonial } from '@/lib/dataLoader';
 
 const AVATAR_GRADIENTS = [
-  'from-cyan-500 to-blue-600',
+  'from-green-500 to-blue-600',
   'from-violet-500 to-purple-700',
   'from-emerald-500 to-teal-700',
   'from-amber-500 to-orange-600',
   'from-pink-500 to-rose-700',
   'from-indigo-500 to-blue-700',
   'from-green-500 to-emerald-700',
-  'from-cyan-400 to-violet-600',
+  'from-green-400 to-violet-600',
   'from-red-500 to-pink-600',
   'from-sky-500 to-indigo-600',
 ];

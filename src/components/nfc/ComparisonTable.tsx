@@ -53,7 +53,7 @@ export default function ComparisonTable() {
               <th className="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider pb-4 px-3 w-24">In-House</th>
               <th className="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider pb-4 px-3 w-24">Others</th>
               <th className="text-center pb-4 px-3 w-24">
-                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">UClean ✦</span>
+                <span className="text-xs font-bold text-green-400 uppercase tracking-wider">UClean ✦</span>
               </th>
             </tr>
           </thead>
@@ -84,7 +84,7 @@ export default function ComparisonTable() {
         {[
           { label: 'In-House', score: SCORES.inhouse, color: 'text-slate-400' },
           { label: 'Others', score: SCORES.other, color: 'text-slate-300' },
-          { label: 'UClean', score: SCORES.uclean, color: 'text-cyan-400' },
+          { label: 'UClean', score: SCORES.uclean, color: 'text-green-400' },
         ].map(({ label, score, color }) => (
           <div key={label} className="text-center">
             <p className={`text-2xl font-black num ${color}`}>{score}/{ROWS.length}</p>

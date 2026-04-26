@@ -11,7 +11,7 @@ const STEPS = [
     label: 'SCAN',
     title: 'Order Received',
     detail: 'QR / NFC tag verified',
-    color: '#22D3EE',
+    color: '#22C55E',
     glow: 'rgba(34,211,238,0.4)',
   },
   {
@@ -93,7 +93,7 @@ export default function AIProcess() {
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center"
             style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.2)' }}>
-            <Scan className="w-4 h-4" style={{ color: '#22D3EE' }} />
+            <Scan className="w-4 h-4" style={{ color: '#22C55E' }} />
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-100">AI Process Engine</h3>
@@ -104,7 +104,7 @@ export default function AIProcess() {
           onClick={handleManualTrigger}
           className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-lg transition-all"
           style={{
-            color: '#22D3EE',
+            color: '#22C55E',
             background: 'rgba(6,182,212,0.08)',
             border: '1px solid rgba(6,182,212,0.2)',
           }}
@@ -126,7 +126,7 @@ export default function AIProcess() {
                   className="w-9 h-9 rounded-xl flex items-center justify-center relative z-10 cursor-pointer"
                   style={{
                     background: isCurrent
-                      ? `rgba(${step.color === '#22D3EE' ? '34,211,238' : step.color === '#818CF8' ? '129,140,248' : step.color === '#F59E0B' ? '245,158,11' : '16,185,129'},0.15)`
+                      ? `rgba(${step.color === '#22C55E' ? '34,197,94' : step.color === '#818CF8' ? '129,140,248' : step.color === '#F59E0B' ? '245,158,11' : '16,185,129'},0.15)`
                       : isDone ? 'rgba(16,185,129,0.12)' : 'rgba(30,41,59,0.6)',
                     border: `1px solid ${isCurrent ? step.color : isDone ? '#10B981' : 'rgba(71,85,105,0.5)'}`,
                     boxShadow: isCurrent ? `0 0 16px ${step.glow}` : 'none',
@@ -189,7 +189,7 @@ export default function AIProcess() {
           transition={{ duration: 0.25 }}
           className="rounded-xl p-4"
           style={{
-            background: `rgba(${currentStep.color === '#22D3EE' ? '34,211,238' : currentStep.color === '#818CF8' ? '129,140,248' : currentStep.color === '#F59E0B' ? '245,158,11' : '16,185,129'},0.05)`,
+            background: `rgba(${currentStep.color === '#22C55E' ? '34,197,94' : currentStep.color === '#818CF8' ? '129,140,248' : currentStep.color === '#F59E0B' ? '245,158,11' : '16,185,129'},0.05)`,
             border: `1px solid ${currentStep.color}30`,
           }}
         >

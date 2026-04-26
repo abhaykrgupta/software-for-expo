@@ -15,7 +15,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
   if (!active || !payload?.length) return null;
   return (
     <div className="glass-strong rounded-xl px-4 py-3 min-w-[130px]">
-      <p className="text-xs text-cyan-400 font-semibold mb-2">{label}</p>
+      <p className="text-xs text-green-400 font-semibold mb-2">{label}</p>
       <p className="text-lg font-bold text-slate-50 num">{formatINR(payload[0].value)}</p>
       <p className="text-xs text-slate-500">daily revenue</p>
     </div>
@@ -32,8 +32,8 @@ export default function RevenueChart({ locations }: { locations: FranchiseLocati
       {/* Header */}
       <div className="flex items-start justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-cyan-500/10">
-            <BarChart2 className="w-5 h-5 text-cyan-400" />
+          <div className="p-2.5 rounded-xl bg-green-500/10">
+            <BarChart2 className="w-5 h-5 text-green-400" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-slate-100">Revenue Trend</h3>
@@ -56,9 +56,9 @@ export default function RevenueChart({ locations }: { locations: FranchiseLocati
           <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
             <defs>
               <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%"   stopColor="#06B6D4" stopOpacity={0.4} />
-                <stop offset="50%"  stopColor="#06B6D4" stopOpacity={0.1} />
-                <stop offset="100%" stopColor="#06B6D4" stopOpacity={0} />
+                <stop offset="0%"   stopColor="#16A34A" stopOpacity={0.4} />
+                <stop offset="50%"  stopColor="#16A34A" stopOpacity={0.1} />
+                <stop offset="100%" stopColor="#16A34A" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid
@@ -83,13 +83,13 @@ export default function RevenueChart({ locations }: { locations: FranchiseLocati
             <Area
               type="monotone"
               dataKey="revenue"
-              stroke="#06B6D4"
+              stroke="#16A34A"
               strokeWidth={2.5}
               fill="url(#revenueGradient)"
               dot={false}
               activeDot={{
                 r: 5,
-                fill: '#06B6D4',
+                fill: '#16A34A',
                 stroke: 'rgba(6,182,212,0.3)',
                 strokeWidth: 6,
               }}

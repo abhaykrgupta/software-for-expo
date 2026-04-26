@@ -25,7 +25,7 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
   size: (i % 3) + 1.5,
   x: `${(i * 41 + 13) % 100}%`,
   y: `${(i * 61 + 7)  % 100}%`,
-  color: i % 4 === 0 ? '#06B6D4' : i % 4 === 1 ? '#818CF8' : i % 4 === 2 ? '#10B981' : '#00FFEA',
+  color: i % 4 === 0 ? '#16A34A' : i % 4 === 1 ? '#818CF8' : i % 4 === 2 ? '#10B981' : '#00D664',
   opacity: 0.07 + (i % 6) * 0.03,
   dur: 7 + (i % 7),
   delay: (i * 0.6) % 6,
@@ -140,8 +140,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         border: '1px solid rgba(6,182,212,0.2)',
         boxShadow: '0 0 16px rgba(6,182,212,0.08)',
       }}>
-      <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#22D3EE', boxShadow: '0 0 6px #22D3EE' }} />
-      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#22D3EE' }}>{children}</span>
+      <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#22C55E', boxShadow: '0 0 6px #22C55E' }} />
+      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#22C55E' }}>{children}</span>
     </div>
   );
 }
@@ -153,7 +153,7 @@ const USP_FEATURES = [
     title: '₹0 Monthly Software Fees',
     sub: 'Save ₹60,000+ annually vs third-party platforms',
     detail: 'Competitors charge ₹3,000–₹6,000/month for basic software. UClean builds and maintains everything in-house.',
-    color: '#22D3EE', bg: 'rgba(34,211,238,0.07)', border: 'rgba(34,211,238,0.2)', glow: 'rgba(34,211,238,0.08)',
+    color: '#22C55E', bg: 'rgba(34,197,94,0.07)', border: 'rgba(34,197,94,0.2)', glow: 'rgba(34,197,94,0.08)',
   },
   {
     icon: Code2,
@@ -187,7 +187,7 @@ const STEPS = [
 ];
 
 const STATS = [
-  { value: 180,  suffix: 'Cr+', prefix: '₹', label: 'Network Revenue', sub: 'FY 2023–24', color: '#22D3EE' },
+  { value: 180,  suffix: 'Cr+', prefix: '₹', label: 'Network Revenue', sub: 'FY 2023–24', color: '#22C55E' },
   { value: 500,  suffix: '+',   prefix: '',   label: 'Franchises',       sub: 'active outlets', color: '#818CF8' },
   { value: 94,   suffix: '%',   prefix: '',   label: 'Renewal Rate',     sub: 'franchisees renew', color: '#10B981' },
   { value: 4.7,  suffix: '★',  prefix: '',   label: 'Avg Rating',       sub: 'verified reviews', color: '#F59E0B', decimals: 1 },
@@ -308,7 +308,7 @@ export default function NFCPage() {
           className="flex items-center gap-6 mt-10 flex-wrap justify-center"
         >
           {[
-            { v: '500+', l: 'Stores', color: '#22D3EE' },
+            { v: '500+', l: 'Stores', color: '#22C55E' },
             { v: '₹180Cr', l: 'Revenue', color: '#818CF8' },
             { v: '4.7★', l: 'Rating', color: '#F59E0B' },
             { v: '94%', l: 'Renewal', color: '#10B981' },
@@ -446,7 +446,7 @@ export default function NFCPage() {
             <h3 className="text-xl font-black text-slate-100 mb-6 text-center">The UClean Advantage by Numbers</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
-                { v: '₹180Cr+', l: 'Network Revenue',    s: 'FY 2023–24',         c: '#22D3EE' },
+                { v: '₹180Cr+', l: 'Network Revenue',    s: 'FY 2023–24',         c: '#22C55E' },
                 { v: '8 Months', l: 'Fastest Breakeven', s: 'on record',            c: '#10B981' },
                 { v: '28 States', l: 'Pan-India Presence',s: '& growing',           c: '#818CF8' },
                 { v: '94%',      l: 'Renewal Rate',       s: 'franchisees renew',   c: '#F59E0B' },
@@ -542,7 +542,7 @@ export default function NFCPage() {
                     style={{
                       background: 'linear-gradient(135deg, rgba(6,182,212,0.15), rgba(37,99,235,0.15))',
                       border: '1px solid rgba(6,182,212,0.3)',
-                      color: '#22D3EE',
+                      color: '#22C55E',
                       boxShadow: '0 0 16px rgba(6,182,212,0.15)',
                     }}
                   >
@@ -602,7 +602,7 @@ export default function NFCPage() {
                   boxShadow: '0 0 16px rgba(6,182,212,0.1)',
                 }}
               >
-                <Icon className="w-5 h-5" style={{ color: '#22D3EE' }} />
+                <Icon className="w-5 h-5" style={{ color: '#22C55E' }} />
               </div>
               <p className="text-sm font-bold text-slate-200">{label}</p>
               <p className="text-xs text-slate-600 mt-0.5">{sub}</p>

@@ -23,7 +23,7 @@ interface Country {
 
 // UClean operating countries with approximate marker coordinates
 const UCLEAN_COUNTRIES: Country[] = [
-  { code:'IND', numericCode:'356', name:'India',      flag:'🇮🇳', stores:650, cities:150, lat:20.59,  lng:78.96,  status:'flagship',  launchYear:2016, color:'#22D3EE' },
+  { code:'IND', numericCode:'356', name:'India',      flag:'🇮🇳', stores:650, cities:150, lat:20.59,  lng:78.96,  status:'flagship',  launchYear:2016, color:'#22C55E' },
   { code:'ARE', numericCode:'784', name:'UAE',        flag:'🇦🇪', stores:42,  cities:6,   lat:24.47,  lng:54.37,  status:'active',    launchYear:2020, color:'#818CF8' },
   { code:'GHA', numericCode:'288', name:'Ghana',      flag:'🇬🇭', stores:18,  cities:4,   lat:7.95,   lng:-1.02,  status:'active',    launchYear:2021, color:'#10B981' },
   { code:'BGD', numericCode:'050', name:'Bangladesh', flag:'🇧🇩', stores:24,  cities:5,   lat:23.69,  lng:90.36,  status:'active',    launchYear:2021, color:'#F59E0B' },
@@ -70,7 +70,7 @@ export default function GlobalMap({ autoHighlight = true }: Props) {
             className="w-10 h-10 rounded-xl flex items-center justify-center"
             style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.2)' }}
           >
-            <Globe className="w-5 h-5" style={{ color: '#22D3EE' }} />
+            <Globe className="w-5 h-5" style={{ color: '#22C55E' }} />
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-100">Global Footprint</h3>

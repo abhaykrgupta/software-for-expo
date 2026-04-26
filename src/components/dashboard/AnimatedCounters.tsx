@@ -21,7 +21,7 @@ const CARDS = (locations: FranchiseLocation[]) => {
       value: totalRevenue / 100000,
       prefix: '₹', suffix: 'L', decimals: 1,
       icon: TrendingUp,
-      color: '#22D3EE',
+      color: '#22C55E',
       glow: 'rgba(34,211,238,0.35)',
       glowSoft: 'rgba(34,211,238,0.08)',
       trend: '+18.4%', sub: 'across all locations',

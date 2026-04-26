@@ -34,7 +34,7 @@ function SuccessScreen({ offline, onReset }: { offline: boolean; onReset: () => 
 
       <h3 className="text-2xl font-bold text-slate-50 mb-2">Request Received! 🎉</h3>
       <p className="text-slate-400 mb-4">
-        Our franchise expert will call you within <span className="text-cyan-400 font-semibold">24 hours</span>.
+        Our franchise expert will call you within <span className="text-green-400 font-semibold">24 hours</span>.
       </p>
 
       {offline && (
@@ -73,7 +73,7 @@ export default function BookDemoForm() {
         particleCount: 120,
         spread: 80,
         origin: { y: 0.65 },
-        colors: ['#06B6D4', '#22D3EE', '#818CF8', '#10B981', '#F59E0B'],
+        colors: ['#16A34A', '#22C55E', '#818CF8', '#10B981', '#F59E0B'],
       });
     } catch { /* ignore */ }
   };
@@ -113,8 +113,8 @@ export default function BookDemoForm() {
     <GlassCard className="p-6 md:p-8" topGlow>
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/20">
-          <Sparkles className="w-6 h-6 text-cyan-400" />
+        <div className="p-3 rounded-2xl bg-green-500/10 border border-green-500/20">
+          <Sparkles className="w-6 h-6 text-green-400" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-50">Book a Free Demo</h3>

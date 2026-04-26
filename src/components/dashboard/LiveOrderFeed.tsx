@@ -69,8 +69,8 @@ export default function LiveOrderFeed({ allOrders }: { allOrders: LiveOrder[] })
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-cyan-500/10">
-            <Zap className="w-4 h-4 text-cyan-400" />
+          <div className="p-2 rounded-xl bg-green-500/10">
+            <Zap className="w-4 h-4 text-green-400" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-slate-100">Live Order Feed</h3>
@@ -97,7 +97,7 @@ export default function LiveOrderFeed({ allOrders }: { allOrders: LiveOrder[] })
                 transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                 className="overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-3 rounded-xl border border-slate-700/50 bg-slate-900/50 hover:border-cyan-500/20 hover:bg-slate-900/80 transition-all duration-200 group">
+                <div className="flex items-center gap-3 p-3 rounded-xl border border-slate-700/50 bg-slate-900/50 hover:border-green-500/20 hover:bg-slate-900/80 transition-all duration-200 group">
                   {/* Left: service icon */}
                   <div className="text-xl flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-slate-800">
                     {SERVICE_ICONS[order.serviceType] ?? '🧺'}
@@ -106,7 +106,7 @@ export default function LiveOrderFeed({ allOrders }: { allOrders: LiveOrder[] })
                   {/* Middle: details */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="text-xs font-mono text-cyan-400 font-medium">{order.orderId}</span>
+                      <span className="text-xs font-mono text-green-400 font-medium">{order.orderId}</span>
                     </div>
                     <p className="text-sm text-slate-200 font-medium truncate">
                       {order.city} · {order.serviceType}

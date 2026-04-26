@@ -47,11 +47,11 @@ const CITIES = [
 const SERVICES = ['Dry Clean', 'Wash & Fold', 'Steam Press', 'Premium Laundry', 'Shoe Clean'];
 
 const EVENT_TEMPLATES: Array<{ type: string; color: string; gen: () => string }> = [
-  { type: 'pickup',   color: '#22D3EE', gen: () => `📦 Pickup scheduled · ${rnd(CITIES)}` },
+  { type: 'pickup',   color: '#22C55E', gen: () => `📦 Pickup scheduled · ${rnd(CITIES)}` },
   { type: 'cleaning', color: '#818CF8', gen: () => `🧺 Cleaning in progress · ${rnd(CITIES)}` },
   { type: 'quality',  color: '#10B981', gen: () => `✅ QC passed · ${rnd(CITIES)}` },
   { type: 'delivery', color: '#F59E0B', gen: () => `🚚 Delivered in ${12 + Math.floor(Math.random() * 40)} mins · ${rnd(CITIES)}` },
-  { type: 'order',    color: '#22D3EE', gen: () => `⚡ New order · ${rnd(SERVICES)} · ${rnd(CITIES)}` },
+  { type: 'order',    color: '#22C55E', gen: () => `⚡ New order · ${rnd(SERVICES)} · ${rnd(CITIES)}` },
   { type: 'rating',   color: '#FCD34D', gen: () => `⭐ ${Math.random() > 0.3 ? '5' : '4'}★ rating · ${rnd(CITIES)}` },
   { type: 'express',  color: '#F472B6', gen: () => `🔥 Express · ₹${200 + Math.floor(Math.random() * 1200)} · ${rnd(CITIES)}` },
   { type: 'eco',      color: '#34D399', gen: () => `🌿 Eco wash · 0.${1 + Math.floor(Math.random() * 6)}L water saved · ${rnd(CITIES)}` },

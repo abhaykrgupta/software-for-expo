@@ -35,7 +35,7 @@ export default function GlowButton({
   const base = `
     inline-flex items-center justify-center gap-2 font-semibold rounded-xl
     transition-all duration-300 relative overflow-hidden select-none
-    focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-slate-950
+    focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:ring-offset-2 focus:ring-offset-slate-950
     disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
     ${sizes[size]} ${className}
   `;

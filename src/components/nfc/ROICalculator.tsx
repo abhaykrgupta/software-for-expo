@@ -11,7 +11,7 @@ import type { ROITier } from '@/lib/dataLoader';
 type TierKey = 'tier1' | 'tier2' | 'tier3';
 
 const TIER_CONFIG: Record<TierKey, { label: string; tag: string; color: string; border: string }> = {
-  tier1: { label: 'Metro City', tag: 'Mumbai, Delhi, Bangalore', color: 'text-cyan-400', border: 'border-cyan-500/50' },
+  tier1: { label: 'Metro City', tag: 'Mumbai, Delhi, Bangalore', color: 'text-green-400', border: 'border-green-500/50' },
   tier2: { label: 'Tier 2 City', tag: 'Jaipur, Indore, Surat', color: 'text-violet-400', border: 'border-violet-500/50' },
   tier3: { label: 'Tier 3 City', tag: 'Agra, Jodhpur, Mysuru', color: 'text-emerald-400', border: 'border-emerald-500/50' },
 };
@@ -46,8 +46,8 @@ export default function ROICalculator() {
     <GlassCard className="p-6 md:p-8" topGlow>
       {/* Header */}
       <div className="flex items-center gap-3 mb-7">
-        <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/20">
-          <Calculator className="w-6 h-6 text-cyan-400" />
+        <div className="p-3 rounded-2xl bg-green-500/10 border border-green-500/20">
+          <Calculator className="w-6 h-6 text-green-400" />
         </div>
         <div>
           <h3 className="text-xl font-bold text-slate-50">ROI Calculator</h3>
@@ -81,13 +81,13 @@ export default function ROICalculator() {
       <div className="mb-7">
         <div className="flex justify-between items-center mb-2.5">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Projection Period</p>
-          <span className="text-sm font-bold text-cyan-400 num">{months} months</span>
+          <span className="text-sm font-bold text-green-400 num">{months} months</span>
         </div>
         <input
           type="range" min={6} max={60} step={6}
           value={months} onChange={e => setMonths(Number(e.target.value))}
           className="w-full"
-          style={{ accentColor: '#06B6D4' }}
+          style={{ accentColor: '#16A34A' }}
         />
         <div className="flex justify-between text-xs text-slate-600 mt-1">
           <span>6 mo</span><span>2 yr</span><span>5 yr</span>
@@ -107,7 +107,7 @@ export default function ROICalculator() {
           {[
             { label: 'Total Investment', value: investment / 100000, suffix: 'L', color: 'text-amber-400', bg: 'bg-amber-500/8', sub: 'one-time setup cost' },
             { label: 'Monthly Profit', value: monthlyProfit / 1000, suffix: 'K', color: 'text-emerald-400', bg: 'bg-emerald-500/8', sub: `${tier.revenueMetrics.profitMargin}% net margin` },
-            { label: `${months}M Earnings`, value: projected / 100000, suffix: 'L', color: 'text-cyan-400', bg: 'bg-cyan-500/8', sub: `over ${months} months` },
+            { label: `${months}M Earnings`, value: projected / 100000, suffix: 'L', color: 'text-green-400', bg: 'bg-green-500/8', sub: `over ${months} months` },
             { label: 'Net ROI', value: net > 0 ? net / 100000 : 0, suffix: net > 0 ? 'L' : '', color: net > 0 ? 'text-yellow-400' : 'text-slate-500', bg: 'bg-yellow-500/8', sub: net > 0 ? 'after investment recovery' : `breakeven ~${tier.revenueMetrics.roiMonths}mo` },
           ].map(({ label, value, suffix, color, bg, sub }) => (
             <div key={label} className={`${bg} border border-slate-700/40 rounded-2xl p-4`}>
@@ -155,7 +155,7 @@ export default function ROICalculator() {
           <div className="divider-gradient my-2" />
           <div className="flex justify-between items-center">
             <span className="font-bold text-slate-200">Total Investment</span>
-            <span className="font-bold text-cyan-400 num text-lg">{formatINR(tier.investmentBreakdown.total)}</span>
+            <span className="font-bold text-green-400 num text-lg">{formatINR(tier.investmentBreakdown.total)}</span>
           </div>
         </div>
       </div>

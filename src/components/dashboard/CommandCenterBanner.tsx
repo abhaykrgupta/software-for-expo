@@ -13,8 +13,8 @@ interface Props {
 
 const STATUS_ITEMS = [
   { label: 'SYSTEM',   value: 'ONLINE',    color: '#00FF88' },
-  { label: 'FEED',     value: 'LIVE',      color: '#00FFEA' },
-  { label: 'SYNC',     value: '30s',       color: '#22D3EE' },
+  { label: 'FEED',     value: 'LIVE',      color: '#00D664' },
+  { label: 'SYNC',     value: '30s',       color: '#22C55E' },
   { label: 'COVERAGE', value: 'PAN-INDIA', color: '#818CF8' },
 ];
 
@@ -67,7 +67,7 @@ export default function CommandCenterBanner({ locationCount, lastRefresh, isRefr
                   boxShadow: '0 0 20px rgba(6,182,212,0.15)',
                 }}
               >
-                <Globe className="w-6 h-6" style={{ color: '#22D3EE' }} />
+                <Globe className="w-6 h-6" style={{ color: '#22C55E' }} />
               </div>
               {/* Radar ring */}
               <motion.div
@@ -86,7 +86,7 @@ export default function CommandCenterBanner({ locationCount, lastRefresh, isRefr
               <h1 className="text-xl md:text-2xl font-black text-slate-50 tracking-tight leading-tight">
                 Network{' '}
                 <span style={{
-                  background: 'linear-gradient(135deg, #22D3EE 0%, #818CF8 100%)',
+                  background: 'linear-gradient(135deg, #22C55E 0%, #818CF8 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -105,7 +105,7 @@ export default function CommandCenterBanner({ locationCount, lastRefresh, isRefr
             {/* Mini KPIs */}
             <div className="flex items-center gap-1 divide-x divide-slate-700/60">
               {[
-                { icon: Zap,      label: 'Orders/hr',  value: 847,  suffix: '', color: '#22D3EE', decimals: 0 },
+                { icon: Zap,      label: 'Orders/hr',  value: 847,  suffix: '', color: '#22C55E', decimals: 0 },
                 { icon: Activity, label: 'Uptime',      value: 99.9, suffix: '%', color: '#00FF88', decimals: 1 },
                 { icon: Cpu,      label: 'Nodes',       value: locationCount, suffix: '', color: '#818CF8', decimals: 0 },
               ].map(({ icon: Icon, label, value, suffix, color, decimals }, i) => (
@@ -129,7 +129,7 @@ export default function CommandCenterBanner({ locationCount, lastRefresh, isRefr
               style={{
                 background: 'rgba(6,182,212,0.06)',
                 border: '1px solid rgba(6,182,212,0.2)',
-                color: '#22D3EE',
+                color: '#22C55E',
               }}
             >
               <Activity className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />

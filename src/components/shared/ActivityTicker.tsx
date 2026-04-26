@@ -63,7 +63,7 @@ export default function ActivityTicker() {
           style={{ borderRight: '1px solid rgba(6,182,212,0.2)' }}>
           <span className="live-dot-cyan" style={{ width: 6, height: 6 }} />
           <span className="text-[10px] font-mono font-bold uppercase tracking-widest"
-            style={{ color: '#22D3EE' }}>
+            style={{ color: '#22C55E' }}>
             Live
           </span>
         </div>

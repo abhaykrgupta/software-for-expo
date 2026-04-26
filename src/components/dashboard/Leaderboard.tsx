@@ -84,7 +84,7 @@ export default function Leaderboard({ locations }: { locations: FranchiseLocatio
                   initial={{ width: 0 }}
                   animate={{ width: `${pct}%` }}
                   transition={{ delay: idx * 0.07 + 0.3, duration: 0.9, ease: 'easeOut' }}
-                  className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-600"
+                  className="h-full rounded-full bg-gradient-to-r from-green-500 to-blue-600"
                 />
               </div>
 

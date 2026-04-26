@@ -11,7 +11,7 @@ import { formatINR } from '@/lib/dataLoader';
 const INDIA_GEO = 'https://cdn.jsdelivr.net/npm/india-atlas@2.0.0/india-atlas.json';
 
 const TIER_CONFIG: Record<number, { color: string; glow: string; size: number }> = {
-  1: { color: '#06B6D4', glow: 'rgba(6,182,212,0.6)',   size: 7 },
+  1: { color: '#16A34A', glow: 'rgba(6,182,212,0.6)',   size: 7 },
   2: { color: '#818CF8', glow: 'rgba(129,140,248,0.6)', size: 5.5 },
   3: { color: '#10B981', glow: 'rgba(16,185,129,0.6)',  size: 4.5 },
 };
@@ -37,8 +37,8 @@ export default function IndiaMap({ locations }: { locations: FranchiseLocation[]
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-cyan-500/10">
-            <MapPin className="w-4 h-4 text-cyan-400" />
+          <div className="p-2.5 rounded-xl bg-green-500/10">
+            <MapPin className="w-4 h-4 text-green-400" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-slate-100">Network Coverage</h3>
@@ -154,7 +154,7 @@ export default function IndiaMap({ locations }: { locations: FranchiseLocation[]
               className="absolute z-20 pointer-events-none"
               style={{ left: Math.min(tooltip.x + 12, 400), top: Math.max(tooltip.y - 100, 8) }}
             >
-              <div className="glass-strong rounded-2xl p-4 w-56 border border-cyan-500/20">
+              <div className="glass-strong rounded-2xl p-4 w-56 border border-green-500/20">
                 <button
                   className="absolute top-3 right-3 text-slate-500 hover:text-slate-300 pointer-events-auto"
                   onClick={() => setTooltip(null)}
@@ -168,7 +168,7 @@ export default function IndiaMap({ locations }: { locations: FranchiseLocation[]
                 <p className="text-xs text-slate-400 mb-3">{tooltip.loc.area}, {tooltip.loc.state}</p>
                 <div className="space-y-1.5">
                   {[
-                    ['Revenue', formatINR(tooltip.loc.monthlyRevenue), 'text-cyan-400'],
+                    ['Revenue', formatINR(tooltip.loc.monthlyRevenue), 'text-green-400'],
                     ['Orders', `${tooltip.loc.monthlyOrders.toLocaleString()}/mo`, 'text-slate-200'],
                     ['Rating', `${'★'.repeat(Math.round(tooltip.loc.rating))} ${tooltip.loc.rating}`, 'text-amber-400'],
                     ['Since', new Date(tooltip.loc.joinedDate).getFullYear().toString(), 'text-slate-400'],

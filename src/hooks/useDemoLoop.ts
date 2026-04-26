@@ -14,12 +14,12 @@ export const DEMO_SLIDES: DemoSlide[] = [
 ];
 
 const SLIDE_DURATION: Record<DemoSlide, number> = {
-  hero:       4000,
-  metrics:    5000,
-  process:    4000,
+  hero:       7000,   // extended — big impact moment needs time to land
+  metrics:    5500,
+  process:    4500,
   map:        5000,
-  enterprise: 3000,
-  franchise:  5000,
+  enterprise: 4000,
+  franchise:  6000,
 };
 
 interface DemoLoopState {
