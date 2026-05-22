@@ -1,21 +1,42 @@
 # UClean Expo PWA
 
-Offline-first Next.js 14 trade show experience for UClean franchise.
+A Next.js 14 Progressive Web App built for UClean franchise trade show events. Features a live analytics dashboard, franchise lead capture, sales rep management, and CRM integration.
 
 ## Quick Start
 
 ```bash
-cd urcup
 npm install
-node generate-icons.js   # creates placeholder PNG icons
 npm run dev
 ```
 
-Open:
-- **Dashboard**: http://localhost:3000/dashboard
-- **NFC / Franchise page**: http://localhost:3000/nfc
+## Pages
 
-## Build & Deploy (Vercel)
+| Route | Purpose |
+|-------|---------|
+| `/expo` | LED-style live analytics dashboard for booth TV/screen |
+| `/form` | Franchise enquiry form (public-facing, NFC/QR tap) |
+| `/leads` | Sales rep lead management (requires login) |
+| `/franchise` | Franchise landing page |
+| `/sales-login` | Sales rep login |
+| `/admin-login` | Admin login |
+
+## API Routes
+
+| Endpoint | Purpose |
+|----------|---------|
+| `POST /api/auth/login` | Sales rep / admin authentication |
+| `POST /api/auth/logout` | End session |
+| `GET /api/auth/session` | Check current session |
+| `POST /api/auth/signup` | Register new sales user |
+| `GET/POST /api/leads` | List / create leads |
+| `GET/PATCH/DELETE /api/leads/[id]` | Lead detail operations |
+| `GET /api/leads/my` | Leads owned by current sales rep |
+| `POST /api/leads/sync` | Sync leads to Zixflow CRM |
+| `POST /api/webhooks/zixflow` | Zixflow inbound webhook |
+| `POST /api/notifications/enqueue` | Enqueue WhatsApp notifications |
+| `GET /api/admin/backup` | Export all leads + users as JSON (admin only) |
+
+## Build & Deploy
 
 ```bash
 npm run build
@@ -23,32 +44,21 @@ npm start
 # or push to GitHub → import on vercel.com (zero config)
 ```
 
-## Pages
-
-| Route | Purpose |
-|-------|---------|
-| `/dashboard` | LED-style live analytics for booth TV/screen |
-| `/nfc` | Mobile landing page for NFC tap / QR code |
-
-## Offline Testing
-
-1. `npm run build && npm start`
-2. Open Chrome DevTools → Application → Service Workers → check "Offline"
-3. Refresh — everything still works from cache
-
-## Export Leads
-
-Click **Export Leads** in the navbar — downloads a CSV of all form submissions stored in localStorage.
-
 ## Stack
 
 - Next.js 14 (App Router)
 - TypeScript + Tailwind CSS
+- SQLite via better-sqlite3
+- iron-session (auth)
 - Framer Motion (animations)
-- Recharts (revenue chart)
-- React Simple Maps (India map)
-- next-pwa (service worker)
-- Lucide React (icons)
+- Zixflow CRM integration
+- WhatsApp notifications
+- next-pwa (offline / service worker)
+- Recharts + React Simple Maps
+
+## Environment Variables
+
+See `next-env.d.ts` for required env vars (Zixflow API key, WhatsApp credentials, session secret, etc.).
 
 ## Brand Colors
 
